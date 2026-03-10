@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Password Form</h2>
+
+<form id="form">
+
+<input type="password" id="password" placeholder="Enter password">
+<button type="submit">Submit</button>
+
+<p id="message"></p>
+
+</form>
+
+<script>
+
+const form = document.getElementById("form")
+const password = document.getElementById("password")
+const message = document.getElementById("message")
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault()
+
+let pass = password.value
+
+if(pass.length >= 8 && pass.length <= 10 && pass !== pass.toLowerCase()){
+    message.innerText = "Valid Password ✅"
+}
+else{
+    message.innerText = "Password 8-10 characters and 1 uppercase required ❌"
+}
+
+})
+
+</script>
+
+</body>
+</html>
